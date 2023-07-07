@@ -18,6 +18,13 @@ def click_btn(valor):
 def click_delete():
     e_text.delete(0, END)
 
+def operation():
+    ecuation = e_text.get()
+    result = eval(ecuation)
+    e_text.delete(0, END)
+    e_text.insert(0, result)
+    i = 0
+
 # Buttons
 button1 = Button(window, text = "1", width = 5, height = 2, command = lambda: click_btn(1))
 button2 = Button(window, text = "2", width = 5, height = 2, command = lambda: click_btn(2))
@@ -39,7 +46,7 @@ button_div = Button(window, text = "/", width = 5, height = 2, command = lambda:
 button_mult = Button(window, text = "*", width = 5, height = 2, command = lambda: click_btn("*"))
 button_sum = Button(window, text = "+", width = 5, height = 2, command = lambda: click_btn("+"))
 button_sub = Button(window, text = "-", width = 5, height = 2, command = lambda: click_btn("-"))
-button_equals = Button(window, text = "=", width = 5, height = 2, command = lambda: click_btn("="))
+button_equals = Button(window, text = "=", width = 5, height = 2, command = lambda: operation())
 
 # Show buttons
 button_delete.grid(row = 1, column = 0, padx = 5, pady = 5)
